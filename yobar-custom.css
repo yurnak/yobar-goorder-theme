@@ -1,0 +1,236 @@
+/* ==========================================================
+   YO BAR & PUB — custom theme for GoOrder
+   Paste into: Ustawienia → Style css (Zaawansowane)
+   Palette taken from the logo: black + neon lime
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --yo-lime: #d4f03c;
+  --yo-lime-dark: #b9d61f;
+  --yo-ink: #0f100d;
+  --yo-ink-2: #1b1d18;
+  --yo-bg: #f5f4ef;
+  --yo-line: #e4e2d8;
+  --yo-text: #1b1d18;
+  --yo-muted: #6b6d63;
+
+  /* GoOrder brand scale → used for links, prices, primary buttons.
+     Light steps = lime tints, dark steps = ink so text stays readable on white */
+  --brand-50: #f8fce6;
+  --brand-100: #eff8c4;
+  --brand-200: #e3f38f;
+  --brand-300: #d4f03c;
+  --brand-400: #2a2c24;
+  --brand-500: #1b1d18;
+  --brand-600: #0f100d;
+  --brand-700: #0f100d;
+  --brand-800: #0f100d;
+  --brand-900: #0f100d;
+  --brand-950: #000;
+
+  --bs-primary: #0f100d;
+  --bs-primary-rgb: 15, 16, 13;
+  --bs-link-color: #0f100d;
+  --bs-link-hover-color: #000;
+  --bs-body-color: #3a3c34;
+}
+
+body, .App { background: var(--yo-bg) !important; color: var(--bs-body-color); }
+
+h1, h2, h3, h4, .h4, .card-title, .navbar, .menu-category-header .h4 {
+  font-family: 'Space Grotesk', Inter, sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Top promo bar ---------- */
+.promo-top-banner {
+  background: var(--yo-ink) !important;
+  color: #d9dace !important;
+  border-bottom: 1px solid #2a2c24;
+}
+.promo-top-banner .btn-primary {
+  background: var(--yo-lime) !important;
+  border-color: var(--yo-lime) !important;
+  color: var(--yo-ink) !important;
+  font-weight: 600;
+}
+
+/* ---------- Navbar ---------- */
+nav.navbar {
+  background: var(--yo-ink) !important;
+  border-bottom: 1px solid #2a2c24;
+}
+nav.navbar .navbar-brand img {
+  height: 48px !important;
+  width: 48px !important;
+  border-radius: 8px;
+}
+nav.navbar svg, nav.navbar .nav-link, nav.navbar button { color: #f2f2ea !important; }
+nav.navbar svg path[fill]:not([fill="none"]) { fill: currentColor; }
+nav.navbar svg path[stroke]:not([stroke="none"]) { stroke: currentColor; }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--yo-ink) !important;
+  border-radius: 18px !important;
+  overflow: hidden;
+  padding: 0 !important;
+}
+.hero .hero-bg { display: none !important; }
+.hero .hero-content { padding: 0 !important; max-width: none !important; width: 100% !important; }
+.hero .big-image-container {
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 320px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  box-shadow: none !important;
+}
+.hero .description {
+  color: #e7e8dc !important;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: left !important;
+  padding: 22px 28px 26px !important;
+  border-top: 4px solid var(--yo-lime);
+}
+
+/* ---------- Promotions ---------- */
+.btn.btn-promotion {
+  background: var(--yo-lime) !important;
+  border: 0 !important;
+  color: var(--yo-ink) !important;
+  border-radius: 14px !important;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn.btn-promotion::before, .btn.btn-promotion::after { background: var(--yo-bg) !important; }
+.btn.btn-promotion p, .btn.btn-promotion svg { color: var(--yo-ink) !important; font-weight: 700; }
+.btn.btn-promotion svg path { stroke: var(--yo-ink); }
+.btn.btn-promotion:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15,16,13,.18); }
+
+/* ---------- Search ---------- */
+.input-search .form-control {
+  background: #fff !important;
+  border: 1.5px solid var(--yo-line) !important;
+  border-radius: 999px !important;
+  height: 48px;
+}
+.input-search .form-control:focus {
+  border-color: var(--yo-ink) !important;
+  box-shadow: 0 0 0 3px rgba(212,240,60,.55) !important;
+}
+
+/* ---------- Category tabs (pills) ---------- */
+.nav-categories-wrapper,
+.sticky-fixed-categories .sticky-inner-wrapper { background: var(--yo-bg) !important; }
+.sticky-fixed-categories .sticky-inner-wrapper { padding-top: 8px; padding-bottom: 8px; }
+.nav-categories-wrapper .nav-link {
+  border: 1.5px solid var(--yo-line) !important;
+  border-radius: 999px !important;
+  padding: 6px 14px !important;
+  color: var(--yo-text) !important;
+  background: #fff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.nav-categories-wrapper .nav-link.active,
+.nav-categories-wrapper .nav-item.active .nav-link,
+.nav-categories-wrapper .nav-link:hover {
+  background: var(--yo-ink) !important;
+  border-color: var(--yo-ink) !important;
+  color: var(--yo-lime) !important;
+}
+.nav-categories-wrapper .nav-link::after,
+.nav-categories-wrapper .nav-link::before { display: none !important; }
+.nav-categories-wrapper ul.gap-4 { gap: 8px !important; }
+
+/* ---------- Category headers ---------- */
+.menu-category-header .h4 {
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: var(--yo-ink) !important;
+  display: inline-block;
+  padding-bottom: 4px;
+  background: linear-gradient(var(--yo-lime), var(--yo-lime)) 0 88% / 100% 35% no-repeat;
+}
+
+/* ---------- Product cards ---------- */
+.menu-item .card {
+  background: #fff !important;
+  border: 1px solid var(--yo-line) !important;
+  border-radius: 16px !important;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.menu-item .card:hover {
+  transform: translateY(-2px);
+  border-color: var(--yo-ink) !important;
+  box-shadow: 0 10px 24px rgba(15,16,13,.10);
+}
+.menu-item .card-img img,
+.menu-item .card-img svg.image-svg {
+  width: 112px !important;
+  height: 112px !important;
+  border-radius: 12px !important;
+  object-fit: cover;
+}
+.menu-item .card-img svg.image-svg rect { fill: #efeee6; }
+.menu-item .card-title {
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  color: var(--yo-ink) !important;
+}
+.menu-item .card-body p, .menu-item .card-text { color: var(--yo-muted) !important; }
+.menu-item .price, .menu-item .card-body .text-primary,
+.menu-item [class*="price"] {
+  color: var(--yo-ink) !important;
+  font-weight: 700 !important;
+}
+
+/* "+" add button on product image */
+.menu-item .rounded-icon {
+  background: var(--yo-lime) !important;
+  color: var(--yo-ink) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 8px rgba(15,16,13,.25);
+}
+.menu-item .rounded-icon .ellipse { display: none !important; }
+.menu-item .rounded-icon svg { position: relative; z-index: 1; }
+.menu-item .rounded-icon svg path { fill: var(--yo-ink) !important; }
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: var(--yo-ink) !important;
+  border-color: var(--yo-ink) !important;
+  color: var(--yo-lime) !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: #000 !important;
+  color: var(--yo-lime) !important;
+}
+.btn-primary:disabled, .btn-primary.disabled {
+  background: #d9d8cf !important;
+  border-color: #d9d8cf !important;
+  color: #85867c !important;
+  opacity: 1 !important;
+}
+
+/* ---------- Cart sidebar ---------- */
+.cart-sticky { background: var(--yo-bg) !important; }
+.cart-sticky-container {
+  border: 1px solid var(--yo-line) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 6px 20px rgba(15,16,13,.06);
+}
+.cart-sticky-footer .btn-submit { height: 52px; font-size: 1rem; }
+.cart-no-items-body p { color: var(--yo-muted) !important; }
+
+/* ---------- Misc ---------- */
+a { color: var(--yo-ink); }
+.text-primary { color: var(--yo-ink) !important; }
+::selection { background: var(--yo-lime); color: var(--yo-ink); }

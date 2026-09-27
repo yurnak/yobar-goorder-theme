@@ -1,0 +1,466 @@
+/* ==========================================================
+   YO BAR & PUB — "Neon Pub" dark theme for GoOrder
+   Paste into: Ustawienia → Style css (Zaawansowane)
+   (or host this file and put its URL into "Link do css")
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --yo-lime: #d4f03c;
+  --yo-lime-soft: rgba(212, 240, 60, .12);
+  --yo-bg: #0b0c0a;
+  --yo-surface: #151612;
+  --yo-surface-2: #1d1f19;
+  --yo-line: #2a2d24;
+  --yo-text: #f1f2ea;
+  --yo-muted: #9a9d8f;
+  --yo-radius: 18px;
+
+  --brand-50: #1d1f19;
+  --brand-100: #25281f;
+  --brand-200: #3a3f2a;
+  --brand-300: #b9d61f;
+  --brand-400: #d4f03c;
+  --brand-500: #d4f03c;
+  --brand-600: #d4f03c;
+  --brand-700: #d4f03c;
+  --brand-800: #e3f38f;
+  --brand-900: #eff8c4;
+  --brand-950: #f8fce6;
+
+  --bs-body-bg: #0b0c0a;
+  --bs-body-color: #f1f2ea;
+  --bs-emphasis-color: #f1f2ea;
+  --bs-secondary-color: #9a9d8f;
+  --bs-border-color: #2a2d24;
+  --bs-primary: #d4f03c;
+  --bs-primary-rgb: 212, 240, 60;
+  --bs-link-color: #d4f03c;
+  --bs-link-hover-color: #e3f38f;
+  --bs-heading-color: #f1f2ea;
+}
+
+/* ---------- Base ---------- */
+html, body, .App, .main, .main-content, .menu-page, .body-container {
+  background: var(--yo-bg) !important;
+  color: var(--yo-text) !important;
+}
+body {
+  background:
+    radial-gradient(900px 500px at 15% -10%, rgba(212,240,60,.10), transparent 60%),
+    var(--yo-bg) !important;
+  font-family: Inter, sans-serif !important;
+}
+.menu-page h1, .menu-page h2, .menu-page h3, .menu-page h4, .menu-page h5,
+.menu-page p, .menu-page span, .menu-page label, .menu-page small,
+.modal-content, .modal-content h1, .modal-content h2, .modal-content h3,
+.modal-content h4, .modal-content h5, .modal-content p, .modal-content span,
+.modal-content label, .text-dark, .text-body {
+  color: var(--yo-text);
+}
+.text-muted, .text-secondary, .form-text, .card-text, .description {
+  color: var(--yo-muted) !important;
+}
+h1, h2, h3, h4, .h4, .card-title {
+  font-family: 'Space Grotesk', Inter, sans-serif !important;
+  letter-spacing: -0.02em;
+}
+::selection { background: var(--yo-lime); color: #000; }
+* { scrollbar-color: #33362c transparent; }
+
+/* ---------- Top promo bar ---------- */
+.promo-top-banner {
+  background: var(--yo-lime) !important;
+  color: #000 !important;
+  border: 0 !important;
+}
+.promo-top-banner, .promo-top-banner * { color: #000 !important; }
+.promo-top-banner svg path { stroke: #000; }
+.promo-top-banner .btn-primary {
+  background: #000 !important;
+  border-color: #000 !important;
+  color: var(--yo-lime) !important;
+  border-radius: 999px !important;
+  font-weight: 700;
+}
+
+/* ---------- Navbar ---------- */
+nav.navbar {
+  background: rgba(11,12,10,.85) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--yo-line);
+}
+nav.navbar .navbar-brand img {
+  height: 52px !important;
+  width: 52px !important;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--yo-line);
+}
+nav.navbar svg, nav.navbar .nav-link, nav.navbar button { color: var(--yo-text) !important; }
+nav.navbar svg path[fill]:not([fill="none"]) { fill: currentColor; }
+nav.navbar svg path[stroke]:not([stroke="none"]) { stroke: currentColor; }
+nav.navbar button:hover svg, nav.navbar a:hover svg { color: var(--yo-lime) !important; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  background: #000 !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  border: 1px solid var(--yo-line);
+}
+.hero .hero-bg { display: none !important; }
+.hero .hero-content {
+  position: relative;
+  padding: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+.hero .big-image-container {
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 380px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  box-shadow: none !important;
+}
+/* dark fade over photo so text sits on it */
+.hero .hero-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,.92) 88%);
+  pointer-events: none;
+}
+.hero .hero-content::before {
+  content: "CRAFT BEER · COCKTAILS · QUIZ · SPORT";
+  position: absolute;
+  z-index: 2;
+  left: 28px;
+  top: 24px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--yo-lime);
+  color: #000;
+  font: 700 12px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .08em;
+}
+.hero .description {
+  position: absolute !important;
+  z-index: 2;
+  left: 0; right: 0; bottom: 0;
+  color: #e9eadf !important;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  text-align: left !important;
+  padding: 0 28px 26px !important;
+  max-width: 720px;
+}
+
+/* ---------- Promotions (tickets) ---------- */
+.btn.btn-promotion .ellipse-ico circle { fill: var(--yo-bg) !important; }
+.btn.btn-promotion .foggy-ico { opacity: .5; }
+.promotions .btn.btn-promotion, .btn.btn-promotion {
+  background: var(--yo-surface) !important;
+  border: 1px dashed rgba(212,240,60,.7) !important;
+  color: var(--yo-text) !important;
+  border-radius: 16px !important;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn.btn-promotion::before, .btn.btn-promotion::after { background: var(--yo-bg) !important; }
+.btn.btn-promotion p { color: var(--yo-text) !important; font-weight: 700; }
+.btn.btn-promotion svg { color: var(--yo-lime) !important; }
+.btn.btn-promotion svg path { stroke: var(--yo-lime); }
+.btn.btn-promotion:hover {
+  transform: translateY(-2px);
+  background: var(--yo-lime-soft) !important;
+  box-shadow: 0 0 24px rgba(212,240,60,.18);
+}
+
+/* ---------- Search ---------- */
+.input-search .form-control, .form-control, .form-select {
+  background-color: var(--yo-surface) !important;
+  border: 1px solid var(--yo-line) !important;
+  color: var(--yo-text) !important;
+}
+.input-search .form-control { border-radius: 999px !important; height: 50px; }
+.form-control::placeholder { color: #6f7266 !important; }
+.form-control:focus, .form-select:focus {
+  border-color: var(--yo-lime) !important;
+  box-shadow: 0 0 0 3px rgba(212,240,60,.25) !important;
+}
+
+/* ---------- Category pills ---------- */
+.nav-categories-wrapper,
+.sticky-inner-wrapper,
+.sticky-fixed-categories .sticky-inner-wrapper {
+  background: rgba(11,12,10,.92) !important;
+  backdrop-filter: blur(10px);
+}
+.sticky-fixed-categories .sticky-inner-wrapper { padding-top: 10px; padding-bottom: 10px; }
+.nav-categories-wrapper ul.gap-4 { gap: 8px !important; }
+.nav-categories-wrapper .nav-link {
+  border: 1px solid var(--yo-line) !important;
+  border-radius: 999px !important;
+  padding: 8px 16px !important;
+  background: var(--yo-surface) !important;
+  color: var(--yo-text) !important;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all .15s ease;
+}
+.nav-categories-wrapper .nav-link::after,
+.nav-categories-wrapper .nav-link::before { display: none !important; }
+.nav-categories-wrapper .nav-item.active .nav-link,
+.nav-categories-wrapper .nav-link.active {
+  background: var(--yo-lime) !important;
+  border-color: var(--yo-lime) !important;
+  color: #000 !important;
+}
+.nav-categories-wrapper .nav-link:hover { border-color: var(--yo-lime) !important; }
+.nav-scrolling-buttons-wrapper button, .nav-scrolling-buttons-wrapper .btn {
+  background: var(--yo-surface-2) !important;
+  color: var(--yo-text) !important;
+  border-color: var(--yo-line) !important;
+}
+
+/* ---------- Category headers ---------- */
+.menu-category-header .h4 {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: var(--yo-text) !important;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+.menu-category-header .h4::before {
+  content: "";
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--yo-lime);
+  box-shadow: 0 0 12px var(--yo-lime);
+}
+
+/* ---------- Product grid: big photo cards ---------- */
+.menu-items.menu-items-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px !important;
+}
+.menu-items-grid > .menu-item { width: auto !important; max-width: none !important; margin: 0 !important; }
+.menu-item .card {
+  flex-direction: column !important;
+  height: 100%;
+  padding: 0 !important;
+  background: var(--yo-surface) !important;
+  border: 1px solid var(--yo-line) !important;
+  border-radius: var(--yo-radius) !important;
+  overflow: hidden;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.menu-item .card:hover {
+  transform: translateY(-4px);
+  border-color: var(--yo-lime) !important;
+  box-shadow: 0 14px 34px rgba(0,0,0,.5), 0 0 0 1px var(--yo-lime);
+}
+.menu-item .card-img {
+  width: 100% !important; height: auto !important; min-height: 0 !important; max-height: none !important;
+  margin: 0 !important; padding: 0 !important; overflow: hidden; flex: 0 0 auto !important;
+}
+.menu-item .card-img > div { position: relative !important; width: 100% !important; height: auto !important; }
+.menu-item .card-img img,
+.menu-item .card-img svg.image-svg {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0 !important;
+  transition: transform .4s ease;
+}
+.menu-item .card:hover .card-img img { transform: scale(1.05); }
+.menu-item .card-img svg.image-svg rect { fill: var(--yo-surface-2); }
+.menu-item .card-img svg.image-svg path { fill: #4a4e40; }
+
+.menu-item .card-body {
+  display: flex !important;
+  flex-direction: column;
+  flex: 1;
+  padding: 14px 16px 16px !important;
+}
+.menu-item .card-title {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  line-height: 1.25;
+  color: var(--yo-text) !important;
+  margin-bottom: 6px !important;
+}
+.menu-item .card-text {
+  font-size: .85rem;
+  line-height: 1.45;
+  color: var(--yo-muted) !important;
+}
+.menu-item .price {
+  margin-top: auto !important;
+  padding-top: 10px;
+  color: var(--yo-lime) !important;
+  font: 700 1.15rem/1 'Space Grotesk', sans-serif !important;
+}
+
+/* "+" button: floating lime circle on the photo */
+.menu-item .rounded-icons-container {
+  position: absolute !important;
+  top: auto !important; left: auto !important;
+  right: 12px !important; bottom: 12px !important;
+  z-index: 2;
+}
+.menu-item .rounded-icon {
+  width: 42px !important; height: 42px !important;
+  background: var(--yo-lime) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,.45);
+  transition: transform .15s ease;
+}
+.menu-item .card:hover .rounded-icon { transform: scale(1.1) rotate(90deg); }
+.menu-item .rounded-icon .ellipse { display: none !important; }
+.menu-item .rounded-icon svg { position: relative; z-index: 1; width: 20px; height: 20px; }
+.menu-item .rounded-icon svg path { fill: #000 !important; }
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  background: var(--yo-lime) !important;
+  border-color: var(--yo-lime) !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  border-radius: 14px !important;
+}
+.btn.btn-primary, .btn.btn-primary * { color: #000 !important; }
+.btn-primary:hover, .btn-primary:focus {
+  background: #e3f38f !important;
+  box-shadow: 0 0 24px rgba(212,240,60,.35) !important;
+}
+.btn-primary:disabled, .btn-primary.disabled {
+  background: #2a2d24 !important;
+  border-color: #2a2d24 !important;
+  color: #6f7266 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+.btn.btn-primary:disabled, .btn.btn-primary:disabled * { color: #6f7266 !important; }
+.btn-outline-primary, .btn-secondary, .btn-light, .btn-default, .btn-outline-secondary {
+  background: var(--yo-surface-2) !important;
+  border-color: var(--yo-line) !important;
+  color: var(--yo-text) !important;
+}
+
+/* ---------- Cart sidebar ---------- */
+.cart-sticky { background: var(--yo-bg) !important; }
+.cart-sticky-container {
+  background: var(--yo-surface) !important;
+  border: 1px solid var(--yo-line) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+.cart-sticky-container > * { border-color: var(--yo-line) !important; }
+.cart-sticky-container * { color: var(--yo-text); }
+.cart-sticky .rounded-icon { background: var(--yo-lime-soft) !important; }
+.cart-sticky .rounded-icon .ellipse { display: none !important; }
+.cart-sticky .rounded-icon svg path { fill: var(--yo-lime) !important; }
+.cart-sticky-footer .btn-submit { height: 54px; font-size: 1.05rem; }
+.cart-no-items-body p { color: var(--yo-muted) !important; }
+.cart-no-items-body .circle {
+  background: linear-gradient(rgba(212,240,60,.10) 0, rgba(212,240,60,0) 70%) !important;
+}
+.cart-sticky .text-success { color: var(--yo-lime) !important; }
+
+/* ---------- Modals / dropdowns / cards ---------- */
+.modal-content, .dropdown-menu, .offcanvas, .card, .list-group-item, .accordion-item, .accordion-button {
+  background-color: var(--yo-surface) !important;
+  color: var(--yo-text) !important;
+  border-color: var(--yo-line) !important;
+}
+.modal-content { border-radius: 24px !important; overflow: hidden; }
+.modal-header, .modal-footer { border-color: var(--yo-line) !important; background: var(--yo-surface) !important; }
+.modal-backdrop.show { opacity: .75 !important; }
+.btn-close { filter: invert(1) grayscale(1) brightness(2); }
+.dropdown-item { color: var(--yo-text) !important; }
+.dropdown-item:hover, .dropdown-item:focus { background: var(--yo-surface-2) !important; color: var(--yo-lime) !important; }
+.form-check-input { background-color: var(--yo-surface-2); border-color: #4a4e40; }
+.form-check-input:checked { background-color: var(--yo-lime) !important; border-color: var(--yo-lime) !important; }
+hr { border-color: var(--yo-line) !important; opacity: 1; }
+
+/* product modal & other white panels */
+.modal-body, .modal .col-left, .modal .col-right, .modal-full .modal-content > div {
+  background-color: var(--yo-surface) !important;
+}
+.modal .col-left { background-color: #000 !important; }
+.modal-content :is(h1, h2, h3, h4, h5, h6, .h4, .h5, .modal-title, p, span, label, small, strong, dt, dd, li),
+.cart-sticky-container :is(h1, h2, h3, h4, h5, h6, p, span, label, small, strong) {
+  color: var(--yo-text) !important;
+}
+.modal-content :is(.text-muted, .form-text, small.text-muted, .text-secondary) { color: var(--yo-muted) !important; }
+.input-group-text {
+  background: var(--yo-surface-2) !important;
+  border-color: var(--yo-line) !important;
+  color: var(--yo-text) !important;
+}
+.badge.bg-light, .badge.text-bg-light { background: var(--yo-surface-2) !important; color: var(--yo-text) !important; }
+
+/* keep text on lime buttons black (beats the generic modal text rule) */
+html body .btn.btn-primary, html body .btn.btn-primary * { color: #000 !important; }
+html body .btn.btn-primary:disabled, html body .btn.btn-primary:disabled * { color: #6f7266 !important; }
+
+html body .promo-top-banner .btn.btn-primary,
+html body .promo-top-banner .btn.btn-primary * { color: var(--yo-lime) !important; }
+
+/* status badges */
+html body .badge.badge-danger-light { background: rgba(255,110,110,.14) !important; color: #ff9b9b !important; }
+html body .badge.badge-success-light { background: rgba(212,240,60,.16) !important; color: var(--yo-lime) !important; }
+html body .badge.badge-warning-light { background: rgba(253,191,34,.16) !important; color: #fdbf22 !important; }
+
+/* alerts */
+html body .alert { border-radius: 12px; }
+html body .alert-danger { background: rgba(255,110,110,.10) !important; border-color: rgba(255,110,110,.35) !important; }
+html body .alert-danger, html body .alert-danger * { color: #ffb3b3 !important; }
+html body .alert-success { background: rgba(212,240,60,.10) !important; border-color: rgba(212,240,60,.35) !important; }
+html body .alert-success, html body .alert-success * { color: var(--yo-lime) !important; }
+html body .alert-warning, html body .alert-info, html body .alert-light, html body .alert-secondary {
+  background: var(--yo-surface-2) !important; border-color: var(--yo-line) !important;
+}
+html body :is(.alert-warning, .alert-info, .alert-light, .alert-secondary),
+html body :is(.alert-warning, .alert-info, .alert-light, .alert-secondary) * { color: var(--yo-text) !important; }
+
+/* ---------- Misc ---------- */
+a { color: var(--yo-lime); }
+.text-primary { color: var(--yo-lime) !important; }
+.bg-white, .bg-light { background-color: var(--yo-surface) !important; }
+.border, .border-top, .border-bottom { border-color: var(--yo-line) !important; }
+
+/* mobile bottom cart bar */
+html body .btn-submit-bottom, html body .btn-cart-container, html body .fixed-bottom {
+  background: rgba(21,22,18,.96) !important;
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--yo-line) !important;
+}
+html body .btn-submit-bottom :is(div, span, p, small) { color: var(--yo-text); }
+html body .btn-submit-bottom .text-success, html body .text-success { color: var(--yo-lime) !important; }
+html body .btn-submit-bottom .rounded-icon { background: var(--yo-lime-soft) !important; }
+html body .btn-submit-bottom .rounded-icon .ellipse { display: none !important; }
+html body .btn-submit-bottom .rounded-icon svg path { fill: var(--yo-lime) !important; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+  .hero .big-image-container { height: 300px !important; }
+  .hero .description { font-size: .95rem; padding: 0 18px 18px !important; }
+  .hero .hero-content::before { left: 18px; top: 16px; font-size: 10px; }
+  .menu-items.menu-items-grid { grid-template-columns: repeat(2, 1fr); gap: 12px !important; }
+  .menu-item .card-title { font-size: .95rem !important; }
+  .menu-item .card-text { display: none; }
+  .menu-category-header .h4 { font-size: 1.5rem !important; }
+}
