@@ -1,14 +1,14 @@
 /* ==========================================================
    YO BAR & PUB — custom theme for GoOrder
-   Paste into: Ustawienia → Style css (Zaawansowane)
-   Palette taken from the logo: black + neon lime
+   Use via: Ustawienia → "Link do css" (the "Style css" textarea is ignored by the storefront)
+   Brand color: Lime Yellow #E3FC62 (Pantone 13-0630 TN) + black
    ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  --yo-lime: #d4f03c;
-  --yo-lime-dark: #b9d61f;
+  --yo-lime: #e3fc62;
+  --yo-lime-dark: #cfe84a;
   --yo-ink: #0f100d;
   --yo-ink-2: #1b1d18;
   --yo-bg: #f5f4ef;
@@ -18,10 +18,10 @@
 
   /* GoOrder brand scale → used for links, prices, primary buttons.
      Light steps = lime tints, dark steps = ink so text stays readable on white */
-  --brand-50: #f8fce6;
-  --brand-100: #eff8c4;
-  --brand-200: #e3f38f;
-  --brand-300: #d4f03c;
+  --brand-50: #fbffe6;
+  --brand-100: #f5fec4;
+  --brand-200: #eefd9c;
+  --brand-300: #e3fc62;
   --brand-400: #2a2c24;
   --brand-500: #1b1d18;
   --brand-600: #0f100d;
@@ -121,7 +121,7 @@ nav.navbar svg path[stroke]:not([stroke="none"]) { stroke: currentColor; }
 }
 .input-search .form-control:focus {
   border-color: var(--yo-ink) !important;
-  box-shadow: 0 0 0 3px rgba(212,240,60,.55) !important;
+  box-shadow: 0 0 0 3px rgba(227, 252, 98,.55) !important;
 }
 
 /* ---------- Category tabs (pills) ---------- */

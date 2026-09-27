@@ -1,14 +1,14 @@
 /* ==========================================================
    YO BAR & PUB — "Neon Pub" dark theme for GoOrder
-   Paste into: Ustawienia → Style css (Zaawansowane)
-   (or host this file and put its URL into "Link do css")
+   Use via: Ustawienia → "Link do css" (the "Style css" textarea is ignored by the storefront)
+   Brand color: Lime Yellow #E3FC62 (Pantone 13-0630 TN). Text on lime is always black.
    ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --yo-lime: #d4f03c;
-  --yo-lime-soft: rgba(212, 240, 60, .12);
+  --yo-lime: #e3fc62;
+  --yo-lime-soft: rgba(227, 252, 98, .12);
   --yo-bg: #0b0c0a;
   --yo-surface: #151612;
   --yo-surface-2: #1d1f19;
@@ -20,24 +20,24 @@
   --brand-50: #1d1f19;
   --brand-100: #25281f;
   --brand-200: #3a3f2a;
-  --brand-300: #b9d61f;
-  --brand-400: #d4f03c;
-  --brand-500: #d4f03c;
-  --brand-600: #d4f03c;
-  --brand-700: #d4f03c;
-  --brand-800: #e3f38f;
-  --brand-900: #eff8c4;
-  --brand-950: #f8fce6;
+  --brand-300: #cfe84a;
+  --brand-400: #e3fc62;
+  --brand-500: #e3fc62;
+  --brand-600: #e3fc62;
+  --brand-700: #e3fc62;
+  --brand-800: #eefd9c;
+  --brand-900: #f5fec4;
+  --brand-950: #fbffe6;
 
   --bs-body-bg: #0b0c0a;
   --bs-body-color: #f1f2ea;
   --bs-emphasis-color: #f1f2ea;
   --bs-secondary-color: #9a9d8f;
   --bs-border-color: #2a2d24;
-  --bs-primary: #d4f03c;
-  --bs-primary-rgb: 212, 240, 60;
-  --bs-link-color: #d4f03c;
-  --bs-link-hover-color: #e3f38f;
+  --bs-primary: #e3fc62;
+  --bs-primary-rgb: 227, 252, 98;
+  --bs-link-color: #e3fc62;
+  --bs-link-hover-color: #eefd9c;
   --bs-heading-color: #f1f2ea;
 }
 
@@ -48,7 +48,7 @@ html, body, .App, .main, .main-content, .menu-page, .body-container {
 }
 body {
   background:
-    radial-gradient(900px 500px at 15% -10%, rgba(212,240,60,.10), transparent 60%),
+    radial-gradient(900px 500px at 15% -10%, rgba(227, 252, 98,.10), transparent 60%),
     var(--yo-bg) !important;
   font-family: Inter, sans-serif !important;
 }
@@ -166,7 +166,7 @@ nav.navbar button:hover svg, nav.navbar a:hover svg { color: var(--yo-lime) !imp
 .btn.btn-promotion .foggy-ico { opacity: .5; }
 .promotions .btn.btn-promotion, .btn.btn-promotion {
   background: var(--yo-surface) !important;
-  border: 1px dashed rgba(212,240,60,.7) !important;
+  border: 1px dashed rgba(227, 252, 98,.7) !important;
   color: var(--yo-text) !important;
   border-radius: 16px !important;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
@@ -178,7 +178,7 @@ nav.navbar button:hover svg, nav.navbar a:hover svg { color: var(--yo-lime) !imp
 .btn.btn-promotion:hover {
   transform: translateY(-2px);
   background: var(--yo-lime-soft) !important;
-  box-shadow: 0 0 24px rgba(212,240,60,.18);
+  box-shadow: 0 0 24px rgba(227, 252, 98,.18);
 }
 
 /* ---------- Search ---------- */
@@ -191,7 +191,7 @@ nav.navbar button:hover svg, nav.navbar a:hover svg { color: var(--yo-lime) !imp
 .form-control::placeholder { color: #6f7266 !important; }
 .form-control:focus, .form-select:focus {
   border-color: var(--yo-lime) !important;
-  box-shadow: 0 0 0 3px rgba(212,240,60,.25) !important;
+  box-shadow: 0 0 0 3px rgba(227, 252, 98,.25) !important;
 }
 
 /* ---------- Category pills ---------- */
@@ -342,8 +342,8 @@ nav.navbar button:hover svg, nav.navbar a:hover svg { color: var(--yo-lime) !imp
 }
 .btn.btn-primary, .btn.btn-primary * { color: #000 !important; }
 .btn-primary:hover, .btn-primary:focus {
-  background: #e3f38f !important;
-  box-shadow: 0 0 24px rgba(212,240,60,.35) !important;
+  background: #eefd9c !important;
+  box-shadow: 0 0 24px rgba(227, 252, 98,.35) !important;
 }
 .btn-primary:disabled, .btn-primary.disabled {
   background: #2a2d24 !important;
@@ -375,7 +375,7 @@ nav.navbar button:hover svg, nav.navbar a:hover svg { color: var(--yo-lime) !imp
 .cart-sticky-footer .btn-submit { height: 54px; font-size: 1.05rem; }
 .cart-no-items-body p { color: var(--yo-muted) !important; }
 .cart-no-items-body .circle {
-  background: linear-gradient(rgba(212,240,60,.10) 0, rgba(212,240,60,0) 70%) !important;
+  background: linear-gradient(rgba(227, 252, 98,.10) 0, rgba(227, 252, 98,0) 70%) !important;
 }
 .cart-sticky .text-success { color: var(--yo-lime) !important; }
 
@@ -421,14 +421,14 @@ html body .promo-top-banner .btn.btn-primary * { color: var(--yo-lime) !importan
 
 /* status badges */
 html body .badge.badge-danger-light { background: rgba(255,110,110,.14) !important; color: #ff9b9b !important; }
-html body .badge.badge-success-light { background: rgba(212,240,60,.16) !important; color: var(--yo-lime) !important; }
+html body .badge.badge-success-light { background: rgba(227, 252, 98,.16) !important; color: var(--yo-lime) !important; }
 html body .badge.badge-warning-light { background: rgba(253,191,34,.16) !important; color: #fdbf22 !important; }
 
 /* alerts */
 html body .alert { border-radius: 12px; }
 html body .alert-danger { background: rgba(255,110,110,.10) !important; border-color: rgba(255,110,110,.35) !important; }
 html body .alert-danger, html body .alert-danger * { color: #ffb3b3 !important; }
-html body .alert-success { background: rgba(212,240,60,.10) !important; border-color: rgba(212,240,60,.35) !important; }
+html body .alert-success { background: rgba(227, 252, 98,.10) !important; border-color: rgba(227, 252, 98,.35) !important; }
 html body .alert-success, html body .alert-success * { color: var(--yo-lime) !important; }
 html body .alert-warning, html body .alert-info, html body .alert-light, html body .alert-secondary {
   background: var(--yo-surface-2) !important; border-color: var(--yo-line) !important;
