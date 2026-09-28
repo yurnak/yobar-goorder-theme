@@ -454,6 +454,67 @@ html body .btn-submit-bottom .rounded-icon { background: var(--yo-lime-soft) !im
 html body .btn-submit-bottom .rounded-icon .ellipse { display: none !important; }
 html body .btn-submit-bottom .rounded-icon svg path { fill: var(--yo-lime) !important; }
 
+/* ---------- Drawers (menu, vouchers), footer, static pages ----------
+   GoOrder hardcodes dark navy text (#101729) and slate (#526077) here */
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .rules-component, .header-container)
+  :is(h1, h2, h3, h4, h5, h6, .h4, .h5, p, span, div, strong, b, li, a, label, dt, dd, td, th, .nav-link, .offcanvas-title) {
+  color: var(--yo-text) !important;
+}
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .rules-component) :is(small, .small, .text-muted, .form-text, .text-secondary),
+html body :is(.offcanvas, .drawer, .footer, .footer-store) .nav-link-multiline small {
+  color: var(--yo-muted) !important;
+}
+html body :is(.text-danger, .opening-hours-danger),
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page) :is(.text-danger, .opening-hours-danger) {
+  color: #ff8f8f !important;
+}
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page) .text-success { color: var(--yo-lime) !important; }
+html body :is(.offcanvas, .drawer) :is(.nav-link, .list-group-item) {
+  background: var(--yo-surface) !important;
+  border-color: var(--yo-line) !important;
+}
+html body :is(.offcanvas, .drawer) .nav-link:hover { border-color: var(--yo-lime) !important; }
+.offcanvas-header { border-bottom: 1px solid var(--yo-line); }
+html body .offcanvas .btn-close, html body .drawer .btn-close { filter: invert(1) grayscale(1) brightness(2); opacity: .8; }
+
+/* round icon badges (location, clock, tag…) */
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .modal-content) .rounded-icon {
+  background: var(--yo-surface-2) !important;
+}
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .modal-content) .rounded-icon .ellipse { display: none !important; }
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .modal-content) .rounded-icon svg { color: var(--yo-lime) !important; }
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .modal-content) .rounded-icon svg path[fill]:not([fill="none"]) { fill: var(--yo-lime) !important; }
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .modal-content) .rounded-icon svg path[stroke]:not([stroke="none"]) { stroke: var(--yo-lime) !important; }
+
+html body .rounded-icon.text-success, html body .rounded-icon.text-success svg { color: var(--yo-lime) !important; }
+
+/* footer block under the menu */
+html body .footer-store {
+  background: var(--yo-surface) !important;
+  border: 1px solid var(--yo-line);
+  border-radius: 22px;
+}
+html body .footer svg path[stroke]:not([stroke="none"]) { stroke: var(--yo-lime); }
+/* dark map */
+.leaflet-container { background: #1a1c17 !important; border-radius: 16px; }
+.leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.85) contrast(.9) saturate(.4); }
+.leaflet-control-attribution { background: rgba(21,22,18,.85) !important; color: var(--yo-muted) !important; }
+.leaflet-control-attribution a { color: var(--yo-muted) !important; }
+
+/* static pages (Regulamin, etc.) */
+html body .header-container {
+  background: var(--yo-surface) !important;
+  border: 1px solid var(--yo-line);
+}
+html body .page a, html body .rules-component a { color: var(--yo-lime) !important; }
+
+/* product image placeholder in modal */
+svg.image-svg rect { fill: var(--yo-surface-2) !important; }
+svg.image-svg path { fill: #4a4e40 !important; }
+
+/* disabled primary button: a bit more legible */
+html body .btn.btn-primary:disabled, html body .btn.btn-primary:disabled * { color: #8d9082 !important; }
+
 /* ---------- Mobile ---------- */
 @media (max-width: 767px) {
   .hero .big-image-container { height: 300px !important; }
