@@ -39,6 +39,11 @@
   --bs-link-color: #e3fc62;
   --bs-link-hover-color: #eefd9c;
   --bs-heading-color: #f1f2ea;
+
+  /* GoOrder sets a white active/pressed state for all buttons */
+  --bs-btn-active-bg: #1d1f19;
+  --bs-btn-active-border-color: #2a2d24;
+  --bs-btn-active-color: #f1f2ea;
 }
 
 /* ---------- Base ---------- */
@@ -474,6 +479,16 @@ html body :is(.offcanvas, .drawer) :is(.nav-link, .list-group-item) {
   border-color: var(--yo-line) !important;
 }
 html body :is(.offcanvas, .drawer) .nav-link:hover { border-color: var(--yo-lime) !important; }
+/* light hairlines around drawer rows, footer rows, static pages */
+html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .cart-sticky-container) :is(.nav-item, li, hr, .border, .border-top, .border-bottom, .list-group-item, .offcanvas-header) {
+  border-color: var(--yo-line) !important;
+}
+/* navbar icon buttons: no white pressed/focus state */
+html body nav.navbar .btn:is(:hover, :focus, :focus-visible, :active, .active, .show) {
+  background: var(--yo-surface-2) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
 .offcanvas-header { border-bottom: 1px solid var(--yo-line); }
 html body .offcanvas .btn-close, html body .drawer .btn-close { filter: invert(1) grayscale(1) brightness(2); opacity: .8; }
 
