@@ -790,8 +790,14 @@ html body :is(.offcanvas, .drawer) .nav-link:hover { border-color: var(--yo-lime
 html body :is(.offcanvas, .drawer, .footer, .footer-store, .page, .cart-sticky-container) :is(.nav-item, li, hr, .border, .border-top, .border-bottom, .list-group-item, .offcanvas-header) {
   border-color: var(--yo-line) !important;
 }
+/* navbar / footer icon buttons: never the browser's default grey */
+html body nav.navbar :is(.btn, .btn-icon, .navbar-toggler),
+html body .footer :is(button, .footer-list-item, .footer-language-option) {
+  background-color: transparent !important;
+}
 /* navbar icon buttons: no white pressed/focus state */
-html body nav.navbar .btn:is(:hover, :focus, :focus-visible, :active, .active, .show) {
+html body nav.navbar :is(.btn, .btn-icon, .navbar-toggler):is(:hover, :focus, :focus-visible, :active, .active, .show),
+html body .footer :is(.footer-list-item, .footer-language-option):hover {
   background: var(--yo-surface-2) !important;
   border-color: transparent !important;
   box-shadow: none !important;
