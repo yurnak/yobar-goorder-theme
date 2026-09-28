@@ -795,6 +795,8 @@ html body nav.navbar :is(.btn, .btn-icon, .navbar-toggler),
 html body .footer :is(button, .footer-list-item, .footer-language-option) {
   background-color: transparent !important;
 }
+html body .footer .footer-language-option { color: var(--yo-muted) !important; }
+html body .footer .footer-language-option:is(.active, :hover) { color: var(--yo-lime) !important; }
 /* navbar icon buttons: no white pressed/focus state */
 html body nav.navbar :is(.btn, .btn-icon, .navbar-toggler):is(:hover, :focus, :focus-visible, :active, .active, .show),
 html body .footer :is(.footer-list-item, .footer-language-option):hover {
